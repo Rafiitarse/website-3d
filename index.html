@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#03050c" />
+    <meta
+      name="description"
+      content="Animasi 3D tata surya interaktif — putar kamera, zoom, dan klik planet untuk melihat informasinya."
+    />
+    <title>Tata Surya 3D</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%23ffb02e'/%3E%3Cellipse cx='16' cy='16' rx='15' ry='6' fill='none' stroke='%236ea8ff' stroke-width='1.5' transform='rotate(-20 16 16)'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <header class="hud panel">
+      <div class="hud-head">
+        <h1>Tata Surya 3D</h1>
+        <p>Animasi interaktif sederhana</p>
+      </div>
+
+      <div class="field">
+        <div class="field-head">
+          <label for="speed">Kecepatan</label>
+          <output id="speedValue" for="speed">1.0&times;</output>
+        </div>
+        <input id="speed" type="range" min="0" max="5" step="0.1" value="1" />
+      </div>
+
+      <div class="actions">
+        <button id="pause" type="button" class="primary">Jeda</button>
+        <button id="reset" type="button">Reset kamera</button>
+      </div>
+
+      <div class="toggles">
+        <label class="check"><input id="orbits" type="checkbox" checked /> Garis orbit</label>
+        <label class="check"><input id="labels" type="checkbox" checked /> Label planet</label>
+      </div>
+    </header>
+
+    <aside id="info" class="info panel hidden" aria-live="polite">
+      <button id="infoClose" class="close" type="button" aria-label="Tutup panel info">&times;</button>
+      <p class="eyebrow">Info benda langit</p>
+      <h2 id="infoName">&mdash;</h2>
+      <dl id="infoRows"></dl>
+      <p id="infoFact" class="fact"></p>
+    </aside>
+
+    <p class="hint">
+      <span class="hint-wide">Drag untuk memutar &middot; Scroll untuk zoom &middot; Klik planet untuk info</span>
+      <span class="hint-narrow">Geser untuk memutar &middot; Cubit untuk zoom &middot; Ketuk planet untuk info</span>
+    </p>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
