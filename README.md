@@ -10,7 +10,7 @@ assets, since every planet texture is generated procedurally on a canvas.
 
 ## Live demo
 
-> `https://your-project.vercel.app`
+> `https://lintar-web3d.vercel.app/`
 
 ## Features
 
